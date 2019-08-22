@@ -45,14 +45,14 @@ class QuizzViewModel {
     func restartGame() {
         matchedKeywords = [String]()
         restartTimer()
-        scoreStatus.value = "00/00"
+        updateScore()
         timerStatus.value = "00:00"
     }
     
     func stopGame() {
         matchedKeywords = [String]()
         stopTimer()
-        scoreStatus.value = "00/00"
+        updateScore()
         timerStatus.value = "00:00"
     }
     
