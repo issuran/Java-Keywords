@@ -37,8 +37,6 @@ class QuizzViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        insertWordInput.delegate = self
-        
         insertWordInput.isEnabled = false
         
         setObservables()
@@ -63,7 +61,8 @@ class QuizzViewController: BaseViewController {
                     break
                 case .load:
                     self.questionLabel.text = self.viewModel.keywordsModel?.question ?? "Wait"
-                    
+                    self.pointsLabel.text = self.viewModel.scoreStatus.value
+                    self.timerLabel.text = self.viewModel.timerStatus.value
                     self.headerView.isHidden = false
                     
                     HUD.shared.hideLoading()
@@ -83,38 +82,27 @@ class QuizzViewController: BaseViewController {
             DispatchQueue.main.async {
                 switch state {
                 case .running:
-                    // START TIMER
-                    
-                    
-                    // DISPLAY TABLE VIEW
                     self.tableView.isHidden = false
                     
-                    // UNLOCK ENTRY FIELD
                     self.insertWordInput.isEnabled = true
                     self.insertWordInput.becomeFirstResponder()
                     
-                    // CHANGE BUTTON TEXT
                     self.startButton.setTitle("Reset", for: .normal)
                     break
                     
                 case .stopped:
-                    // STOP TIMER
-                    
-                    
-                    // CLEAR
                     self.insertWordInput.text = ""
-                    self.viewModel.restartGame()
+                    self.viewModel.stopGame()
                     self.tableView.reloadData()
                     
-                    // BLOCK ENTRY FIELD
                     self.insertWordInput.isEnabled = false
                     self.insertWordInput.resignFirstResponder()
                     
-                    // CHANGE BUTTON TEXT
                     self.startButton.setTitle("Start", for: .normal)
                     break
                     
                 case .congratz:
+                    self.viewModel.pauseGame()
                     self.alert(message: "Good job! You found all the answers on time. Keep up with the great work.",
                                title: "Congratulations",
                                buttonText: "Play Again",
@@ -124,6 +112,7 @@ class QuizzViewController: BaseViewController {
                     break
                     
                 case .failed:
+                    self.viewModel.pauseGame()
                     self.alert(message: "Sorry, time is up! You got \(self.viewModel.matchedKeywords.count) out of \(self.viewModel.keywordsModel?.answer.count ?? 50) answers.",
                                title: "Time finished",
                                buttonText: "Try Again",
@@ -133,7 +122,6 @@ class QuizzViewController: BaseViewController {
                     break
                     
                 case .retry:
-                    // CLEAR
                     self.insertWordInput.text = ""
                     self.viewModel.restartGame()
                     self.tableView.reloadData()
@@ -146,6 +134,13 @@ class QuizzViewController: BaseViewController {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.pointsLabel.text = status
+            }
+        }
+        
+        viewModel.timerStatus.didChange = { [weak self] status in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.timerLabel.text = status
             }
         }
     }
@@ -162,13 +157,8 @@ class QuizzViewController: BaseViewController {
         }
     }
     
-    @IBAction func executeTest(_ sender: Any) {
+    @IBAction func startResetGame(_ sender: Any) {
         viewModel.startResetGame()
-
-        // TODO: TIMER
-        // TODO: ALERT
-        // TODO: COUNT HITS
-        // TODO: HITS THROUGH TYPING
     }
     
     @IBAction func textFieldEditingChanged(_ sender: Any) {
@@ -178,8 +168,4 @@ class QuizzViewController: BaseViewController {
             tableView.reloadData()
         }
     }
-}
-
-extension QuizzViewController: UITextFieldDelegate {
-    
 }

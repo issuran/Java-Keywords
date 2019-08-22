@@ -71,7 +71,7 @@
                         <constraint firstItem="3dL-fi-Lqw" firstAttribute="leading" secondItem="lOe-2r-Vud" secondAttribute="leading" constant="16" id="q8L-Xd-Ic9"/>
                     </constraints>
                 </view>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N2K-jc-8ls">
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N2K-jc-8ls">
                     <rect key="frame" x="16" y="124" width="343" height="406"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
@@ -111,7 +111,7 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="shouldBounce" value="YES"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="executeTest:" destination="-1" eventType="touchUpInside" id="mLA-TM-n9s"/>
+                                <action selector="startResetGame:" destination="-1" eventType="touchUpInside" id="oC7-Ip-wWe"/>
                             </connections>
                         </button>
                     </subviews>
