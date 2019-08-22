@@ -15,7 +15,7 @@ extension QuizzViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        cell.textLabel?.text = viewModel.keywordsModel?.answer[indexPath.row] ?? ""
+        cell.textLabel?.text = viewModel.matchedKeywords[indexPath.row]
         return cell
     }
 }

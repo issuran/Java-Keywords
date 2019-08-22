@@ -15,8 +15,12 @@
                 <outlet property="footerBottomConstraint" destination="qIs-f0-n8c" id="C7a-Sv-iy8"/>
                 <outlet property="footerView" destination="vy5-1L-1aM" id="GCV-8a-I5w"/>
                 <outlet property="headerView" destination="lOe-2r-Vud" id="bsm-lX-VQg"/>
+                <outlet property="insertWordInput" destination="DLJ-Ep-9I4" id="6rS-OZ-mzW"/>
+                <outlet property="pointsLabel" destination="pns-VE-eIU" id="1Vp-Cf-lBc"/>
                 <outlet property="questionLabel" destination="3dL-fi-Lqw" id="kuK-VA-9wI"/>
+                <outlet property="startButton" destination="Kry-HU-bc9" id="ltJ-nM-VE1"/>
                 <outlet property="tableView" destination="N2K-jc-8ls" id="zcf-bk-eCM"/>
+                <outlet property="timerLabel" destination="FnN-Ty-VfN" id="1tI-ra-8Pi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -51,6 +55,9 @@
                                     <color key="value" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="textFieldEditingChanged:" destination="-1" eventType="editingChanged" id="PHV-EJ-6Jr"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,10 +71,9 @@
                         <constraint firstItem="3dL-fi-Lqw" firstAttribute="leading" secondItem="lOe-2r-Vud" secondAttribute="leading" constant="16" id="q8L-Xd-Ic9"/>
                     </constraints>
                 </view>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N2K-jc-8ls">
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N2K-jc-8ls">
                     <rect key="frame" x="16" y="124" width="343" height="406"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Hem-pG-L32"/>
                         <outlet property="delegate" destination="-1" id="UQl-JV-bvw"/>

@@ -35,9 +35,9 @@ class BaseViewController: UIViewController {
         view.endEditing(true)
     }
     
-    func alert(message: String, title: String = "", completion: @escaping Handler) {
+    func alert(message: String, title: String = "", buttonText: String = "", completion: @escaping Handler) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "OK", style: .default) { (_) in
+        let OKAction = UIAlertAction(title: buttonText, style: .default) { (_) in
             completion()
         }
         

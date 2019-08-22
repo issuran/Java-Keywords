@@ -10,6 +10,7 @@
 		522A5682230CD4ED0036F7D1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522A5681230CD4ED0036F7D1 /* BaseViewController.swift */; };
 		522A5685230CDDDD0036F7D1 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522A5684230CDDDD0036F7D1 /* UIColor+Utils.swift */; };
 		5266D715230E3F9D00AF57F9 /* QuizzViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266D714230E3F9D00AF57F9 /* QuizzViewController+TableView.swift */; };
+		5266D717230EC79E00AF57F9 /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266D716230EC79E00AF57F9 /* GameStatus.swift */; };
 		52B62AE2230CE62200D112DF /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62AE1230CE62200D112DF /* HUD.swift */; };
 		52B62AE5230CF26A00D112DF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62AE4230CF26A00D112DF /* CustomButton.swift */; };
 		52B62AE8230CF7D700D112DF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62AE7230CF7D700D112DF /* CustomTextField.swift */; };
@@ -34,6 +35,7 @@
 		522A5681230CD4ED0036F7D1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		522A5684230CDDDD0036F7D1 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		5266D714230E3F9D00AF57F9 /* QuizzViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizzViewController+TableView.swift"; sourceTree = "<group>"; };
+		5266D716230EC79E00AF57F9 /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 		52B62AE1230CE62200D112DF /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		52B62AE4230CF26A00D112DF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		52B62AE7230CF7D700D112DF /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				522A5684230CDDDD0036F7D1 /* UIColor+Utils.swift */,
 				52B62AFC230E2D0400D112DF /* Observable.swift */,
 				52B62AFE230E2D8700D112DF /* RequestStatus.swift */,
+				5266D716230EC79E00AF57F9 /* GameStatus.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5266D717230EC79E00AF57F9 /* GameStatus.swift in Sources */,
 				52B62AFD230E2D0400D112DF /* Observable.swift in Sources */,
 				52BBF504230CB3D10050073F /* AppCoordinator.swift in Sources */,
 				52BBF50E230CB6650050073F /* QuizzViewModel.swift in Sources */,

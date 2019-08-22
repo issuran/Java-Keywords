@@ -12,8 +12,18 @@ class QuizzViewModel {
     let service = QuizzService()
     var keywordsModel: KeywordsModel?
     var serviceStatus: Observable<RequestStates<KeywordsModel, Error>> = Observable(.empty)
+    var gameStatus = Observable(GameStatus.stopped)
+    var scoreStatus = Observable(String())
+    
+    var matchedKeywords = [String]()
     
     init() { }
+    
+    func startResetGame() {
+        gameStatus.value = (gameStatus.value == .running || gameStatus.value == .retry)
+            ? .stopped
+            : .running
+    }
     
     func retrieveKeywords() {
         serviceStatus.value = .loading
@@ -32,7 +42,34 @@ class QuizzViewModel {
         }
     }
     
+    func restartGame() {
+        matchedKeywords = [String]()
+        scoreStatus.value = "00/00"
+    }
+    
+    func matchedKeyword(_ keyword: String) -> Bool {
+        if keywordsModel!.answer.contains(keyword)
+            && !matchedKeywords.contains(keyword) {
+            matchedKeywords.append(keyword)
+            updateScore()
+            checkDone()
+            return true
+        }
+        return false
+    }
+    
+    func updateScore() {
+        let scoreLayout = "\(matchedKeywords.count)/\(keywordsModel?.answer.count ?? 00)"
+        scoreStatus.value = scoreLayout
+    }
+    
+    func checkDone() {
+        if matchedKeywords.count == 3 {
+            gameStatus.value = .congratz
+        }
+    }
+    
     func numberOfRows() -> Int {
-        return keywordsModel?.answer.count ?? 0
+        return matchedKeywords.count
     }
 }

@@ -15,9 +15,14 @@ class QuizzViewController: BaseViewController {
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var insertWordInput: CustomTextField!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var footerView: UIView!
+    
+    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var startButton: CustomButton!
     
     @IBOutlet weak var footerBottomConstraint: NSLayoutConstraint!
     
@@ -28,8 +33,13 @@ class QuizzViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        insertWordInput.delegate = self
+        
+        insertWordInput.isEnabled = false
         
         setObservables()
         
@@ -55,8 +65,6 @@ class QuizzViewController: BaseViewController {
                     self.questionLabel.text = self.viewModel.keywordsModel?.question ?? "Wait"
                     
                     self.headerView.isHidden = false
-                    // REMOVER
-                    self.tableView.isHidden = false
                     
                     HUD.shared.hideLoading()
                     self.tableView.reloadData()
@@ -66,6 +74,78 @@ class QuizzViewController: BaseViewController {
                     print("Error: \(error)")
                     break
                 }
+            }
+        }
+        
+        viewModel.gameStatus.didChange = { [weak self] state in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                switch state {
+                case .running:
+                    // START TIMER
+                    
+                    
+                    // DISPLAY TABLE VIEW
+                    self.tableView.isHidden = false
+                    
+                    // UNLOCK ENTRY FIELD
+                    self.insertWordInput.isEnabled = true
+                    self.insertWordInput.becomeFirstResponder()
+                    
+                    // CHANGE BUTTON TEXT
+                    self.startButton.setTitle("Reset", for: .normal)
+                    break
+                    
+                case .stopped:
+                    // STOP TIMER
+                    
+                    
+                    // CLEAR
+                    self.insertWordInput.text = ""
+                    self.viewModel.restartGame()
+                    self.tableView.reloadData()
+                    
+                    // BLOCK ENTRY FIELD
+                    self.insertWordInput.isEnabled = false
+                    self.insertWordInput.resignFirstResponder()
+                    
+                    // CHANGE BUTTON TEXT
+                    self.startButton.setTitle("Start", for: .normal)
+                    break
+                    
+                case .congratz:
+                    self.alert(message: "Good job! You found all the answers on time. Keep up with the great work.",
+                               title: "Congratulations",
+                               buttonText: "Play Again",
+                               completion: {
+                                self.viewModel.gameStatus.value = .retry
+                    })
+                    break
+                    
+                case .failed:
+                    self.alert(message: "Sorry, time is up! You got \(self.viewModel.matchedKeywords.count) out of \(self.viewModel.keywordsModel?.answer.count ?? 50) answers.",
+                               title: "Time finished",
+                               buttonText: "Try Again",
+                               completion: {
+                                self.viewModel.gameStatus.value = .retry
+                    })
+                    break
+                    
+                case .retry:
+                    // CLEAR
+                    self.insertWordInput.text = ""
+                    self.viewModel.restartGame()
+                    self.tableView.reloadData()
+                    break
+                }
+            }
+        }
+        
+        viewModel.scoreStatus.didChange = { [weak self] status in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.pointsLabel.text = status
             }
         }
     }
@@ -83,9 +163,23 @@ class QuizzViewController: BaseViewController {
     }
     
     @IBAction func executeTest(_ sender: Any) {
+        viewModel.startResetGame()
+
         // TODO: TIMER
         // TODO: ALERT
         // TODO: COUNT HITS
         // TODO: HITS THROUGH TYPING
     }
+    
+    @IBAction func textFieldEditingChanged(_ sender: Any) {
+        let keywordTyped = insertWordInput.text ?? ""
+        if viewModel.matchedKeyword(keywordTyped) {
+            insertWordInput.text = ""
+            tableView.reloadData()
+        }
+    }
+}
+
+extension QuizzViewController: UITextFieldDelegate {
+    
 }
