@@ -113,7 +113,7 @@ class QuizzViewModel {
     // CHECK MATCHES
     
     func matchedKeyword(_ keyword: String) -> Bool {
-        if keywordsModel!.answer.contains(keyword)
+        if keywordsModel!.answer.contains(keyword.lowercased())
             && !matchedKeywords.contains(keyword.capitalized) {
             matchedKeywords.append(keyword.capitalized)
             updateScore()

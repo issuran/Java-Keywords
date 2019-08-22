@@ -11,6 +11,12 @@
 		522A5685230CDDDD0036F7D1 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522A5684230CDDDD0036F7D1 /* UIColor+Utils.swift */; };
 		5266D715230E3F9D00AF57F9 /* QuizzViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266D714230E3F9D00AF57F9 /* QuizzViewController+TableView.swift */; };
 		5266D717230EC79E00AF57F9 /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266D716230EC79E00AF57F9 /* GameStatus.swift */; };
+		5266D724230EFDFC00AF57F9 /* 005.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266D71E230EFDFC00AF57F9 /* 005.png */; };
+		5266D725230EFDFC00AF57F9 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266D71F230EFDFC00AF57F9 /* 003.png */; };
+		5266D726230EFDFC00AF57F9 /* 004.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266D720230EFDFC00AF57F9 /* 004.png */; };
+		5266D727230EFDFC00AF57F9 /* 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266D721230EFDFC00AF57F9 /* 001.png */; };
+		5266D728230EFDFC00AF57F9 /* 006.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266D722230EFDFC00AF57F9 /* 006.png */; };
+		5266D729230EFDFC00AF57F9 /* 002.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266D723230EFDFC00AF57F9 /* 002.png */; };
 		52B62AE2230CE62200D112DF /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62AE1230CE62200D112DF /* HUD.swift */; };
 		52B62AE5230CF26A00D112DF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62AE4230CF26A00D112DF /* CustomButton.swift */; };
 		52B62AE8230CF7D700D112DF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62AE7230CF7D700D112DF /* CustomTextField.swift */; };
@@ -36,6 +42,12 @@
 		522A5684230CDDDD0036F7D1 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		5266D714230E3F9D00AF57F9 /* QuizzViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizzViewController+TableView.swift"; sourceTree = "<group>"; };
 		5266D716230EC79E00AF57F9 /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
+		5266D71E230EFDFC00AF57F9 /* 005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 005.png; path = ../../../../../../005.png; sourceTree = "<group>"; };
+		5266D71F230EFDFC00AF57F9 /* 003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 003.png; path = ../../../../../../003.png; sourceTree = "<group>"; };
+		5266D720230EFDFC00AF57F9 /* 004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 004.png; path = ../../../../../../004.png; sourceTree = "<group>"; };
+		5266D721230EFDFC00AF57F9 /* 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 001.png; path = ../../../../../../001.png; sourceTree = "<group>"; };
+		5266D722230EFDFC00AF57F9 /* 006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 006.png; path = ../../../../../../006.png; sourceTree = "<group>"; };
+		5266D723230EFDFC00AF57F9 /* 002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 002.png; path = ../../../../../../002.png; sourceTree = "<group>"; };
 		52B62AE1230CE62200D112DF /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		52B62AE4230CF26A00D112DF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		52B62AE7230CF7D700D112DF /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -89,6 +101,19 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		5266D71D230EFD7900AF57F9 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				5266D721230EFDFC00AF57F9 /* 001.png */,
+				5266D723230EFDFC00AF57F9 /* 002.png */,
+				5266D71F230EFDFC00AF57F9 /* 003.png */,
+				5266D720230EFDFC00AF57F9 /* 004.png */,
+				5266D71E230EFDFC00AF57F9 /* 005.png */,
+				5266D722230EFDFC00AF57F9 /* 006.png */,
+			);
+			path = screenshots;
+			sourceTree = "<group>";
+		};
 		52B62AE3230CF0D400D112DF /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +160,7 @@
 		52BBF4ED230CAFD80050073F /* Java Keywords */ = {
 			isa = PBXGroup;
 			children = (
+				5266D71D230EFD7900AF57F9 /* screenshots */,
 				52BBF4EE230CAFD80050073F /* AppDelegate.swift */,
 				52BBF505230CB4570050073F /* Models */,
 				52BBF508230CB53A0050073F /* Views */,
@@ -253,9 +279,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5266D728230EFDFC00AF57F9 /* 006.png in Resources */,
+				5266D726230EFDFC00AF57F9 /* 004.png in Resources */,
 				52BBF50C230CB64D0050073F /* QuizzViewController.xib in Resources */,
+				5266D729230EFDFC00AF57F9 /* 002.png in Resources */,
 				52BBF4F9230CAFD90050073F /* LaunchScreen.storyboard in Resources */,
+				5266D727230EFDFC00AF57F9 /* 001.png in Resources */,
+				5266D725230EFDFC00AF57F9 /* 003.png in Resources */,
 				52BBF4F6230CAFD90050073F /* Assets.xcassets in Resources */,
+				5266D724230EFDFC00AF57F9 /* 005.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
