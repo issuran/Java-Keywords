@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		522A5682230CD4ED0036F7D1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522A5681230CD4ED0036F7D1 /* BaseViewController.swift */; };
 		522A5685230CDDDD0036F7D1 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522A5684230CDDDD0036F7D1 /* UIColor+Utils.swift */; };
+		5266D715230E3F9D00AF57F9 /* QuizzViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266D714230E3F9D00AF57F9 /* QuizzViewController+TableView.swift */; };
 		52B62AE2230CE62200D112DF /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62AE1230CE62200D112DF /* HUD.swift */; };
 		52B62AE5230CF26A00D112DF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62AE4230CF26A00D112DF /* CustomButton.swift */; };
 		52B62AE8230CF7D700D112DF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B62AE7230CF7D700D112DF /* CustomTextField.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		522A5681230CD4ED0036F7D1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		522A5684230CDDDD0036F7D1 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		5266D714230E3F9D00AF57F9 /* QuizzViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizzViewController+TableView.swift"; sourceTree = "<group>"; };
 		52B62AE1230CE62200D112DF /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		52B62AE4230CF26A00D112DF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		52B62AE7230CF7D700D112DF /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				52BBF509230CB64D0050073F /* QuizzViewController.swift */,
 				52BBF50A230CB64D0050073F /* QuizzViewController.xib */,
+				5266D714230E3F9D00AF57F9 /* QuizzViewController+TableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				52BBF4EF230CAFD80050073F /* AppDelegate.swift in Sources */,
 				52B62AEA230CFC9900D112DF /* KeywordsModel.swift in Sources */,
 				52B62AE2230CE62200D112DF /* HUD.swift in Sources */,
+				5266D715230E3F9D00AF57F9 /* QuizzViewController+TableView.swift in Sources */,
 				52B62AFB230E25DA00D112DF /* QuizzService.swift in Sources */,
 				522A5682230CD4ED0036F7D1 /* BaseViewController.swift in Sources */,
 				52B62AEE230D01BE00D112DF /* API.swift in Sources */,

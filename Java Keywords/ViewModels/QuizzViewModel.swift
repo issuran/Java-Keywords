@@ -10,7 +10,7 @@ import Foundation
 
 class QuizzViewModel {
     let service = QuizzService()
-    var keywordsModel: KeywordsModel!
+    var keywordsModel: KeywordsModel?
     var serviceStatus: Observable<RequestStates<KeywordsModel, Error>> = Observable(.empty)
     
     init() { }
@@ -21,14 +21,18 @@ class QuizzViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let keywords):
-                sleep(5)
+                sleep(1)
                 self.keywordsModel = keywords ?? KeywordsModel()
-                self.serviceStatus.value = .load(self.keywordsModel)
+                self.serviceStatus.value = .load(self.keywordsModel!)
             case .failure(let error):
                 self.serviceStatus.value = .error(error)
             case .empty:
                 self.serviceStatus.value = .empty
             }
         }
+    }
+    
+    func numberOfRows() -> Int {
+        return keywordsModel?.answer.count ?? 0
     }
 }

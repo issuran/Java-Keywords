@@ -64,10 +64,14 @@
                         <constraint firstItem="3dL-fi-Lqw" firstAttribute="leading" secondItem="lOe-2r-Vud" secondAttribute="leading" constant="16" id="q8L-Xd-Ic9"/>
                     </constraints>
                 </view>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N2K-jc-8ls">
-                    <rect key="frame" x="16" y="124" width="343" height="543"/>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N2K-jc-8ls">
+                    <rect key="frame" x="16" y="124" width="343" height="406"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Hem-pG-L32"/>
+                        <outlet property="delegate" destination="-1" id="UQl-JV-bvw"/>
+                    </connections>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vy5-1L-1aM">
                     <rect key="frame" x="0.0" y="530" width="375" height="137"/>
@@ -124,7 +128,7 @@
                 <constraint firstItem="lOe-2r-Vud" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="R9O-3X-1Td"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lOe-2r-Vud" secondAttribute="trailing" id="TSl-EB-pwU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vy5-1L-1aM" secondAttribute="trailing" id="TxS-HB-AD5"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="N2K-jc-8ls" secondAttribute="bottom" id="Wrx-PF-Uyz"/>
+                <constraint firstItem="vy5-1L-1aM" firstAttribute="top" secondItem="N2K-jc-8ls" secondAttribute="bottom" id="Wrx-PF-Uyz"/>
                 <constraint firstItem="vy5-1L-1aM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Y7P-w0-QhJ"/>
                 <constraint firstItem="N2K-jc-8ls" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Zja-Te-FPy"/>
                 <constraint firstItem="lOe-2r-Vud" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="lrI-MG-1OJ"/>

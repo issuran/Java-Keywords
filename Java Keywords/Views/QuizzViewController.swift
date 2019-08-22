@@ -28,6 +28,9 @@ class QuizzViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         setObservables()
         
         viewModel.retrieveKeywords()
@@ -49,9 +52,11 @@ class QuizzViewController: BaseViewController {
                     HUD.shared.showLoading(self.view)
                     break
                 case .load:
-                    self.questionLabel.text = self.viewModel.keywordsModel.question
+                    self.questionLabel.text = self.viewModel.keywordsModel?.question ?? "Wait"
                     
                     self.headerView.isHidden = false
+                    // REMOVER
+                    self.tableView.isHidden = false
                     
                     HUD.shared.hideLoading()
                     self.tableView.reloadData()
@@ -79,5 +84,8 @@ class QuizzViewController: BaseViewController {
     
     @IBAction func executeTest(_ sender: Any) {
         // TODO: TIMER
+        // TODO: ALERT
+        // TODO: COUNT HITS
+        // TODO: HITS THROUGH TYPING
     }
 }
